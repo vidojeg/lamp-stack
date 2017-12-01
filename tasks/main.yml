@@ -1,2 +1,7 @@
 ---
 # tasks file for lamp-stack
+- include: tasks/centos.yml
+  when: ansible_distribution == "CentOS"
+
+- include: tasks/ubuntu.yml
+  when: ansible_distribution == "Ubuntu"
